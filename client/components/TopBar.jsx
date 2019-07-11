@@ -20,23 +20,47 @@ const StyledLeftUl = style.ul`
   padding: 0;
   list-style: none outside none;
   display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  padding-inline-start: 40px;
+`
+const StyledRightUl = style.ul`
+position: absolute;
+top: 1px;
+right: 0;
+z-index: 99999;
+zoom: 1;
+margin: 0;
+padding: 0;
+list-style: none outside none;
+border: 0;
+font-weight: normal;
+font-size: 100%;
+display: block;
+`
+const StyledRightLi = style.li`
+  list-style: none;
+  display: inline-block;
+  border-right: 1px #c7c7c7 solid;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+  padding: 2px 13px 0 3px;
+  margin: 0 -1px;
+  white-space: nowrap;
+  font-weight: normal;
+  font-size: 100%;
+  text-align: -webkit-match-parent;
 `
 
 const StyledFirstLi = style.li`
 list-style: none;
 background: 0;
-padding: 0;
+padding-right: 8px;
 display: inline-block;
 font-size: 12px;
 margin: 0;
 border: 0;
 font-weight: normal;
 text-align: -webkit-match-parent;
+vertical-align: middle;
 `
 const StyledDividerLi = style.li`
 list-style: none;
@@ -45,14 +69,14 @@ border-left: 1px #909090 solid;
 font-size: 12px;
 padding: 0 9px 0 11px;
 margin: 0;
-border: 0;
 font-weight: normal;
 font-size: 100%;
+vertical-align: middle;
 `
 
 const StyledFinalLi = style.li`
-display: none;
-vertical-align: top;
+display: inline-block;
+vertical-align: middle;
 padding-left: 15px !important;
 height: 30px;
 overflow: hidden;
@@ -68,6 +92,108 @@ border: 0;
 font-weight: normal;
 text-align: -webkit-match-parent;
 `
+const StyledMyEbayLi = style.li`
+list-style: none;
+display: inline-block;
+vertical-align: middle;
+position: relative;
+white-space: nowrap;
+margin: 0 3px;
+padding-left: 13px;
+padding-right: 33px;
+font-weight: normal;
+font-size: 100%;
+text-align: -webkit-match-parent;
+`
+
+const StyledAlertLi = style.li`
+list-style: none;
+box-sizing: border-box;
+margin-right: 0;
+display: inline-block;
+vertical-align: middle;
+position: relative;
+white-space: nowrap;
+margin: 0 3px;
+padding: 0;
+border: 0;
+font-weight: normal;
+font-size: 100%;
+text-align: -webkit-match-parent;
+`
+
+const StyledLink = style.a`
+  text-decoration: none;
+  color: #333;
+  cursor: pointer;
+  :hover {
+    text-decoration: underline;
+    color: #0654ba;
+  }
+  font-size: 12px;
+`
+
+const StyledSignInRegisterLink = style.a`
+    text-decoration: none;
+    color: #0654ba;
+    cursor: pointer;
+    :hover {
+      text-decoration: underline;
+    }
+    font-size: 12px;
+`
+
+const StyledCartLi = style.li`
+display: inline-block;
+vertical-align: middle;
+position: relative;
+white-space: nowrap;
+margin: 0 3px;
+padding: 0;
+border: 0;
+font-weight: normal;
+font-size: 100%;
+`
+
+const StyledCartLink = style.a`
+padding: 2px 13px 3px 17px;
+font-size: 12px;
+vertical-align: top;
+cursor: pointer;
+position: relative;
+font-size: 12px;
+color: #333 !important;
+display: inline-block;
+border: 1px solid transparent;
+border-width: 2px 1px 0;
+text-decoration: none !important;
+}
+`
+
+const StyledCartImg = style.img`
+  width: 20px;
+  height: 18px;
+  display: block;
+  overflow: hidden;
+  text-indent: -9999px;
+  background-position: -55px -101px !important;
+  background-size: 250px 200px;
+  background-image: url(https://ir.ebaystatic.com/rs/v/fxxj3ttftm5ltcqnto1o4baovyl.png);
+  background-repeat: no-repeat;
+`
+
+const StyledBellImg = style.img`
+background-position: -37px -101px !important;
+width: 16px;
+height: 18px;
+display: block;
+overflow: hidden;
+text-indent: -9999px;
+font-size: 0;
+background-size: 250px 200px;
+background-image: url(https://ir.ebaystatic.com/rs/v/fxxj3ttftm5ltcqnto1o4baovyl.png);
+background-repeat: no-repeat;
+`
 function TopBar(props) {
   return (
     <StyledContainer>
@@ -75,40 +201,45 @@ function TopBar(props) {
         <StyledFirstLi>
           <span>
             Hi!
-            <a href="#"> Sign in </a>
+            <StyledSignInRegisterLink href="/"> Sign in </StyledSignInRegisterLink>
             or
             <span>
-              <a href="#"> register</a>
+              <StyledSignInRegisterLink href="/"> register</StyledSignInRegisterLink>
             </span>
           </span>
           </StyledFirstLi>
         <StyledDividerLi>
-          <a href="#"> Daily Deals</a>
+          <StyledLink href="#"> Daily Deals</StyledLink>
         </StyledDividerLi>
         <StyledDividerLi>
-          <a href="#"> Gift Cards</a>
+          <StyledLink href="#"> Gift Cards</StyledLink>
         </StyledDividerLi>
         <StyledDividerLi>
-          <a href="#"> Help and Contact</a>
+          <StyledLink href="#"> Help and Contact</StyledLink>
         </StyledDividerLi>
         <StyledFinalLi>
           <img src="https://ir.ebaystatic.com/cr/v/c1/59591_070819_Prime_Generic_Doodle_150x30_FINAL_V2.gif"></img>
         </StyledFinalLi>
       </StyledLeftUl>
-      <ul>
-        <li>
-          <a href="#"> Sell</a>
-        </li>
-        <li>
-          <a href="#"> My eBay</a>
-        </li>
-        <li>
-          <button></button>
-        </li>
-        <li>
-          <button></button>
-        </li>
-      </ul>
+      <StyledRightUl>
+        <StyledRightLi>
+          <StyledLink href="#"> Sell</StyledLink>
+        </StyledRightLi>
+
+        <StyledMyEbayLi>
+          <StyledLink href="#"> My eBay</StyledLink>
+        </StyledMyEbayLi>
+        <StyledAlertLi>
+          <StyledCartLink>
+          <StyledBellImg src=""></StyledBellImg>
+          </StyledCartLink>
+        </StyledAlertLi>
+        <StyledCartLi>
+          <StyledCartLink>
+            <StyledCartImg src=""></StyledCartImg>
+          </StyledCartLink>
+        </StyledCartLi>
+      </StyledRightUl>
     </StyledContainer>
   )
 }

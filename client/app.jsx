@@ -1,6 +1,14 @@
 import React from 'react';
 import TopBar from './components/TopBar.jsx';
 import style from 'styled-components';
+import { createGlobalStyle } from 'styled-components'
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    display: block;
+    margin: 0;
+  }
+`
 
 const StyledHeader = style.header`
   min-width: 320px;
@@ -33,7 +41,11 @@ class App extends React.Component {
 
   render() {
     return (
+
       <StyledContainer>
+        <React.Fragment>
+        <GlobalStyle/>
+      </React.Fragment>
         <StyledHeader>
           <TopBar />
         </StyledHeader>
