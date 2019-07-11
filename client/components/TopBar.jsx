@@ -38,7 +38,7 @@ function TopBar(props) {
           <div> Bell Picture here</div>
         </li>
         <li>
-          <div> Shopping Cart Picture here</div>//
+          <div> Shopping Cart Picture here</div>
         </li>
       </ul>
     </div>

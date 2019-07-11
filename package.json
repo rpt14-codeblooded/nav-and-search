@@ -31,5 +31,13 @@
     "styled-components": "^4.3.2",
     "webpack": "^4.35.3",
     "webpack-cli": "^3.3.5"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "^2.1.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
