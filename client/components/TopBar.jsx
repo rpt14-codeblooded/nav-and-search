@@ -11,6 +11,7 @@ const StyledContainer = style.div`
     height: 30px;
     box-sizing: initial;
     display: block;
+    padding-left: 6px;
 `
 
 const StyledLeftUl = style.ul`
@@ -215,7 +216,7 @@ function TopBar(props) {
           <StyledLink href="#"> Gift Cards</StyledLink>
         </StyledDividerLi>
         <StyledDividerLi>
-          <StyledLink href="#"> Help and Contact</StyledLink>
+          <StyledLink href="#"> Help & Contact</StyledLink>
         </StyledDividerLi>
         <StyledFinalLi>
           <img src="https://ir.ebaystatic.com/cr/v/c1/59591_070819_Prime_Generic_Doodle_150x30_FINAL_V2.gif"></img>
